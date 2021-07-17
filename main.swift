@@ -24,7 +24,6 @@ func vigenere() {
         let key: String
         let keySize: Int
         
-        
         init(alphabet: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'!?.,", key: String) {
             
             self.alphabet = alphabet
@@ -45,10 +44,8 @@ func vigenere() {
                 if chr == character {
                     return index
                 }
-                
                 index += 1
             }
-            
             return -1
         }
         
@@ -77,7 +74,6 @@ func vigenere() {
                 encryptedText.append(alphabet[encryptedLetterIndex])
                 index += 1
             }
-            
             return encryptedText
         }
         
@@ -105,7 +101,6 @@ func vigenere() {
                 decryptedText.append(alphabet[encryptedLetterIndex])
                 index += 1
             }
-            
             return decryptedText
         }
     }
@@ -235,7 +230,6 @@ func vigenere() {
                         print("* Avoid whitespaces *")
                         print()
                         return enterText()
-                        
                     }
                 }
                 enterText()
