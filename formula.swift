@@ -6,7 +6,6 @@
 
 
 extension String {
-    
     subscript(i: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: i)]
     }
@@ -20,7 +19,6 @@ class Vigenere {
     let key: String
     let keySize: Int
     
-    
     init(alphabet: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", key: String) {
         
         self.alphabet = alphabet.uppercased()
@@ -28,7 +26,6 @@ class Vigenere {
         self.key = key.uppercased()
         self.keySize = key.count
     }
-    
     
     
     // Index of alphabet
@@ -42,10 +39,8 @@ class Vigenere {
             if chr == character {
                 return index
             }
-            
             index += 1
         }
-        
         return -1
     }
     
@@ -74,7 +69,6 @@ class Vigenere {
             encryptedText.append(alphabet[encryptedLetterIndex])
             index += 1
         }
-        
         return encryptedText
     }
     
@@ -102,7 +96,6 @@ class Vigenere {
             decryptedText.append(alphabet[encryptedLetterIndex])
             index += 1
         }
-        
         return decryptedText
     }
 }
