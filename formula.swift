@@ -4,13 +4,11 @@
 //  Created by deathlezz on 8/07/2021.
 //
 
-
 extension String {
     subscript(i: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: i)]
     }
 }
-
 
 class Vigenere {
     
@@ -27,7 +25,6 @@ class Vigenere {
         self.keySize = key.count
     }
     
-    
     // Index of alphabet
     
     func alphabetIndex(forCharacter character: Character) -> Int {
@@ -43,7 +40,6 @@ class Vigenere {
         }
         return -1
     }
-    
     
     // Encrypt
     
@@ -72,7 +68,6 @@ class Vigenere {
         return encryptedText
     }
     
-    
     // Decrypt
     
     func decrypt(encryptedText: String) -> String {
@@ -99,7 +94,6 @@ class Vigenere {
         return decryptedText
     }
 }
-
 
 // Output
 
