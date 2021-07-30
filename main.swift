@@ -6,7 +6,6 @@
 
 import Foundation
 
-
 extension String {
     subscript(i: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: i)]
@@ -32,16 +31,14 @@ func vigenere() {
             self.keySize = key.count
         }
         
-        
         // Index of alphabet
-        
         func alphabetIndex(forCharacter character: Character) -> Int {
             
             var index = 0
             
-            for chr in alphabet {
+            for char in alphabet {
                 
-                if chr == character {
+                if char == character {
                     return index
                 }
                 index += 1
@@ -49,21 +46,19 @@ func vigenere() {
             return -1
         }
         
-        
         // Encrypt
-        
         func encrypt(plainText: String) -> String {
             
             var encryptedText = ""
             var index = 0
             
-            for character in plainText {
+            for char in plainText {
                 
-                let indexInAlphabet = alphabetIndex(forCharacter: character)
+                let indexInAlphabet = alphabetIndex(forCharacter: char)
                 
                 if indexInAlphabet == -1 {
                     
-                    encryptedText.append(character)
+                    encryptedText.append(char)
                     continue
                 }
                 
@@ -77,28 +72,26 @@ func vigenere() {
             return encryptedText
         }
         
-        
         // Decrypt
-        
         func decrypt(encryptedText: String) -> String {
             
             var decryptedText = ""
             var index = 0
             
-            for character in encryptedText {
+            for char in encryptedText {
                 
-                let indexInAlphabet = alphabetIndex(forCharacter: character)
+                let indexInAlphabet = alphabetIndex(forCharacter: char)
                 
                 if indexInAlphabet == -1 {
-                    decryptedText.append(character)
+                    decryptedText.append(char)
                     continue
                 }
                 
-                let keyToEncryptWith = key[index % keySize]
-                let keyIndexInAlphabet = alphabetIndex(forCharacter: keyToEncryptWith)
-                let encryptedLetterIndex = (indexInAlphabet - keyIndexInAlphabet + alphabetSize) % alphabetSize
+                let keyToDecryptWith = key[index % keySize]
+                let keyIndexInAlphabet = alphabetIndex(forCharacter: keyToDecryptWith)
+                let decryptedLetterIndex = (indexInAlphabet - keyIndexInAlphabet + alphabetSize) % alphabetSize
                 
-                decryptedText.append(alphabet[encryptedLetterIndex])
+                decryptedText.append(alphabet[decryptedLetterIndex])
                 index += 1
             }
             return decryptedText
@@ -233,7 +226,7 @@ func vigenere() {
                     }
                 }
                 enterText()
-                
+
             } else {
                 
                 print()
