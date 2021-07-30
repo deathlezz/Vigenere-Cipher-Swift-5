@@ -3,7 +3,6 @@
 //
 //  Created by deathlezz on 8/07/2021.
 //
-
 extension String {
     subscript(i: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: i)]
@@ -81,11 +80,11 @@ class Vigenere {
                 continue
             }
             
-            let keyToEncryptWith = key[index % keySize]
-            let keyIndexInAlphabet = alphabetIndex(forCharacter: keyToEncryptWith)
-            let encryptedLetterIndex = (indexInAlphabet - keyIndexInAlphabet + alphabetSize) % alphabetSize
+            let keyToDecryptWith = key[index % keySize]
+            let keyIndexInAlphabet = alphabetIndex(forCharacter: keyToDecryptWith)
+            let decryptedLetterIndex = (indexInAlphabet - keyIndexInAlphabet + alphabetSize) % alphabetSize
             
-            decryptedText.append(alphabet[encryptedLetterIndex])
+            decryptedText.append(alphabet[decryptedLetterIndex])
             index += 1
         }
         return decryptedText
