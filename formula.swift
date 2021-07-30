@@ -30,9 +30,9 @@ class Vigenere {
         
         var index = 0
         
-        for chr in alphabet {
+        for char in alphabet {
             
-            if chr == character {
+            if char == character {
                 return index
             }
             index += 1
@@ -46,13 +46,13 @@ class Vigenere {
         var encryptedText = ""
         var index = 0
         
-        for character in plainText.uppercased() {
+        for char in plainText.uppercased() {
             
-            let indexInAlphabet = alphabetIndex(forCharacter: character)
+            let indexInAlphabet = alphabetIndex(forCharacter: char)
             
             if indexInAlphabet == -1 {
                 
-                encryptedText.append(character)
+                encryptedText.append(char)
                 continue
             }
             
@@ -72,12 +72,12 @@ class Vigenere {
         var decryptedText = ""
         var index = 0
         
-        for character in encryptedText.uppercased() {
+        for char in encryptedText.uppercased() {
             
-            let indexInAlphabet = alphabetIndex(forCharacter: character)
+            let indexInAlphabet = alphabetIndex(forCharacter: char)
             
             if indexInAlphabet == -1 {
-                decryptedText.append(character)
+                decryptedText.append(char)
                 continue
             }
             
