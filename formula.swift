@@ -26,7 +26,6 @@ class Vigenere {
     }
     
     // Index of alphabet
-    
     func alphabetIndex(forCharacter character: Character) -> Int {
         
         var index = 0
@@ -42,7 +41,6 @@ class Vigenere {
     }
     
     // Encrypt
-    
     func encrypt(plainText: String) -> String {
         
         var encryptedText = ""
@@ -69,7 +67,6 @@ class Vigenere {
     }
     
     // Decrypt
-    
     func decrypt(encryptedText: String) -> String {
         
         var decryptedText = ""
@@ -96,7 +93,6 @@ class Vigenere {
 }
 
 // Output
-
 let vigenere = Vigenere(key: "UNIQUEKEY")
 let encrypt = vigenere.encrypt(plainText: "HAVE A NICE DAY")
 let decrypt = vigenere.decrypt(encryptedText: "BNDU U RSGC XNG")
