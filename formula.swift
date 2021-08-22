@@ -51,7 +51,6 @@ class Vigenere {
             let indexInAlphabet = alphabetIndex(forCharacter: char)
             
             if indexInAlphabet == -1 {
-                
                 encryptedText.append(char)
                 continue
             }
